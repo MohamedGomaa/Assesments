@@ -18,8 +18,8 @@ public class Reply {
     @Column(nullable = false)
     private String replyText;
 
-    @ManyToOne
-    @JoinColumn(name = "inteniId")
+    @OneToOne
+    @JoinColumn(name = "intentId")
     private Intent replyIntent;
 
 }

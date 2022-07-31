@@ -25,8 +25,8 @@ public class Intent {
     @OneToMany(mappedBy = "intent")
     private List<IntentMessage> intentMessages;
 
-    @OneToMany(mappedBy = "replyIntent")
-    private List<Reply> intentReplies;
+    @OneToOne(mappedBy = "replyIntent")
+    private Reply intentReplies;
 
     public Intent(Integer id){
         this.intentId = id;

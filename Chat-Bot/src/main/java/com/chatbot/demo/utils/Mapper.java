@@ -24,11 +24,7 @@ public class Mapper {
             IntentDTO intentDTO = new IntentDTO();
             intentDTO.setIntentName(intentMessage.getIntent().getIntentName());
             intentDTO.setIntentId(intentMessage.getIntent().getIntentId());
-            List<ReplyDTO> replyDTOList = new ArrayList<>();
-            for (Reply reply : intentMessage.getIntent().getIntentReplies()){
-                replyDTOList.add(new ReplyDTO(reply.getReplyId(), reply.getReplyText(), null));
-            }
-            intentDTO.setIntentReplies(replyDTOList);
+            intentDTO.setIntentReply(new ReplyDTO(intentMessage.getIntent().getIntentReplies().getReplyId(), intentMessage.getIntent().getIntentReplies().getReplyText(), intentDTO));
             intentMessageDTO.setIntentDTO(intentDTO);
             intentMessageDTO.setConfidence(intentMessage.getConfidence());
             intentMessageDTOList.add(intentMessageDTO);

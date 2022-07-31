@@ -19,6 +19,6 @@ public class IntentDTO {
     private Integer intentId;
     private String intentName;
     private List<IntentMessageDTO> intentMessages;
-    private List<ReplyDTO> intentReplies;
+    private ReplyDTO intentReply;
 
 }
